@@ -14,5 +14,6 @@ Does the following:
 git config --global gpg.program "${env:ProgramFiles(x86)}\gnupg\bin\gpg.exe"
 $key = gpg --list-secret-keys --keyid-format LONG
 $key = $key[2].substring($key[2].indexOf("/") + 1, 16)
+Write-Host -ForegroundColor Cyan "Setting key to: $key"
 git config --global user.signingkey $key
 ```
